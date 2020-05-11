@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#222222" />
+    <title>Battery Info</title>
+    <link rel="stylesheet" href="./assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./img/battery-half.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="./img/battery.png" alt="" />
+      <h2 class="heading">Battery Info</h2>
+    </header>
+    <main>
+      <div class="container battery-container">
+        <h4 class="text-center mb-3">
+          Dark theme is good for your battery health
+        </h4>
+        <div class="progress" style="height: 50px;">
+          <div
+            class="progress-bar progress-bar-striped"
+            id="progressBar"
+            role="progressbar"
+            style="width: 0%; font-size: 1.4rem;"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <h4 class="text-center mt-3" style="display: none;" id="chargingText">
+          Charging...
+        </h4>
+        <!-- <h4 class="text-center mt-3">
+          Estimated time remaining: <span id="time"></span>
+        </h4> -->
+      </div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Audiowide", sans-serif;
+}
+/* Header Start */
+header {
+  background: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 15vh;
+}
+header img {
+  width: 5rem;
+}
+.heading {
+  text-align: center;
+  margin-top: 5px;
+  color: #222222;
+}
+/* Header End */
+
+/* Main Start */
+main {
+  margin-top: 20px;
+}
+.battery-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+}
+/* Main End */
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 30px;
+  }
+}
