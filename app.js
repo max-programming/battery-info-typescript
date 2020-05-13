@@ -1,9 +1,3 @@
-// VARIABLES Start
-const progressBar = document.getElementById("progressBar");
-// const timeSpan = document.getElementById("time");
-let batteryLevel, isCharging, dischTime;
-// VARIABLES End
-
 // FUNCTIONS Start
 // Change Battery color function
 function changeBatteryColor(value) {
