@@ -36,6 +36,11 @@ main {
   justify-content: center;
   height: 80vh;
 }
+.unsupported {
+  display: none;
+  user-select: none;
+  -moz-user-select: none;
+}
 /* Main End */
 @media screen and (max-width: 768px) {
   .heading {

@@ -16,13 +16,7 @@
       href="./img/battery-half.png"
       type="image/x-icon"
     />
-    <style>
-      .unsupported {
-        display: none;
-        user-select: none;
-        -moz-user-select: none;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <header>
@@ -31,10 +25,7 @@
     </header>
     <main>
       <div class="container battery-container">
-        <h4
-          class="text-center mb-3 unsupported position-absolute"
-          style="top: 0;"
-        >
+        <h4 class="text-center mb-3 unsupported">
           This battery informer is not supported by
           <i class="fab fa-firefox-browser"></i> Firefox browser and Brave
           browser <br />
@@ -52,7 +43,10 @@
           browser
         </h4>
         <div class="supported">
-          <h4 class="text-center mb-3">
+          <h4
+            class="text-center mb-3 position-absolute"
+            style="bottom: 0; left: 0;"
+          >
             Unfortunately, this won't work on Brave browser and
             <i class="fab fa-firefox-browser"></i> Firefox browser
           </h4>
