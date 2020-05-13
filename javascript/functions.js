@@ -17,11 +17,11 @@ function changeBatteryColor(value) {
 // Change Level function
 function changeLevel(battery) {
   batteryLevel = `${battery.level * 100}%`;
+  // Change Battery color
+  progressBar.classList.add(changeBatteryColor(battery.level * 100));
   // console.log(battery.level * 100);
   // console.log(batteryLevel);
   progressBar.setAttribute("aria-valuenow", battery.level);
-  // Change Battery color
-  progressBar.classList.add(changeBatteryColor(battery.level * 100));
   progressBar.style.width = batteryLevel;
   progressBar.innerText = batteryLevel;
 
