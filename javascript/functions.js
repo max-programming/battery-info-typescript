@@ -24,6 +24,8 @@ function changeLevel(battery) {
   progressBar.innerText = batteryLevel;
   // Change Battery color
   progressBar.classList.add(changeBatteryColor(battery.level * 100));
+  // Change the emoji
+  changeEmoji(battery.level * 100);
 }
 // Animate when charging function
 const changeChargingAnimation = () => {
@@ -33,7 +35,16 @@ const changeChargingAnimation = () => {
 
 const chargingTextDisplay = (isCharging) => {
   if (isCharging)
-    document.getElementById("chargingText").style.display = "block";
-  else document.getElementById("chargingText").style.display = "none";
+    document.getElementById("chargingText").classList.remove("d-none");
+  else document.getElementById("chargingText").classList.add("d-none");
+};
+
+const changeEmoji = (value) => {
+  const emojiImage = document.getElementById("emoji");
+  if (value >= 75 && value <= 100) emojiImage.src = "./img/emojis/green.png";
+  else if (value >= 50 && value <= 75) emojiImage.src = "./img/emojis/blue.png";
+  else if (value >= 25 && value <= 50)
+    emojiImage.src = "./img/emojis/yellow.png";
+  else if (value >= 0 && value <= 25) emojiImage.src = "./img/emojis/red.png";
 };
 // FUNCTIONS End

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#222222" />
+    <meta name="theme-color" content="#00A5EF" />
     <title>Battery Info</title>
     <link rel="stylesheet" href="./assets/bootstrap.min.css" />
     <link rel="stylesheet" href="./styles.css" />
@@ -31,7 +31,10 @@
     </header>
     <main>
       <div class="container battery-container">
-        <h4 class="text-center mb-3 unsupported">
+        <h4
+          class="text-center mb-3 unsupported position-absolute"
+          style="top: 0;"
+        >
           This battery informer is not supported by
           <i class="fab fa-firefox-browser"></i> Firefox browser and Brave
           browser <br />
@@ -50,6 +53,9 @@
         </h4>
         <div class="supported">
           <h4 class="text-center mb-3">
+            Unfortunately, this won't work on Brave browser and Firefox browser
+          </h4>
+          <h4 class="text-center mb-3">
             Dark theme is good for your battery health
           </h4>
           <div class="progress" style="height: 50px;">
@@ -62,9 +68,16 @@
               aria-valuemax="100"
             ></div>
           </div>
-          <h4 class="text-center mt-3" style="display: none;" id="chargingText">
+          <h4 class="text-center mt-3 d-none" id="chargingText">
             Charging...
           </h4>
+          <img
+            class="mt-3 mx-auto d-block"
+            id="emoji"
+            style="transition: all 0.3s ease;"
+            src="./img/emojis/blue.png"
+            alt=""
+          />
         </div>
         <!-- <h4 class="text-center mt-3">
           Estimated time remaining: <span id="time"></span>

@@ -34,6 +34,8 @@ async function showBattery() {
     chargingTextDisplay(isCharging);
     // Charging Animation
     changeChargingAnimation();
+    // Change the emoji
+    changeEmoji(battery.level * 100);
   } catch (err) {
     const errMessage = document.querySelector(".unsupported");
     errMessage.style.display = "block";
