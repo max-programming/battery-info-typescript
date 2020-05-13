@@ -20,10 +20,11 @@ function changeLevel(battery) {
   // console.log(battery.level * 100);
   // console.log(batteryLevel);
   progressBar.setAttribute("aria-valuenow", battery.level);
-  progressBar.style.width = batteryLevel;
-  progressBar.innerText = batteryLevel;
   // Change Battery color
   progressBar.classList.add(changeBatteryColor(battery.level * 100));
+  progressBar.style.width = batteryLevel;
+  progressBar.innerText = batteryLevel;
+
   // Change the emoji
   changeEmoji(battery.level * 100);
 }
