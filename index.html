@@ -43,14 +43,6 @@
           browser
         </h4>
         <div class="supported">
-          <h4
-            class="text-center mb-3 position-absolute"
-            style="bottom: 0; left: 0;"
-          >
-            Unfortunately, this won't work on Brave browser,
-            <i class="fab fa-firefox-browser"></i> Firefox browser and
-            <i class="fab fa-safari"></i> Safari
-          </h4>
           <h4 class="text-center mb-3">
             Dark theme is good for your battery health
           </h4>
@@ -62,6 +54,9 @@
               style="width: 0%; font-size: 1.4rem;"
               aria-valuemin="0"
               aria-valuemax="100"
+              data-toggle="tooltip"
+              data-placement="left"
+              data-container="body"
             ></div>
           </div>
           <h4 class="text-center mt-3 d-none" id="chargingText">
@@ -78,6 +73,14 @@
         <!-- <h4 class="text-center mt-3">
           Estimated time remaining: <span id="time"></span>
         </h4> -->
+        <h4
+          class="text-center mb-3 position-absolute"
+          style="font-size: 12px; bottom: 0;"
+        >
+          Unfortunately, this won't work on Brave browser,
+          <i class="fab fa-firefox-browser"></i> Firefox browser and
+          <i class="fab fa-safari"></i> Safari
+        </h4>
       </div>
     </main>
     <script

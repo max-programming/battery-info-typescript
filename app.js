@@ -2,11 +2,13 @@
 const progressBar = document.getElementById("progressBar");
 // const timeSpan = document.getElementById("time");
 let batteryLevel, isCharging, dischTime;
+// const className = changeBatteryColor(battery.level * 100);
 // VARIABLES END
 
 // MAIN Function Start
 async function showBattery() {
   try {
+    const colors = ["success", "info", "warning", "danger"];
     const battery = await navigator.getBattery();
     // console.log(battery);
     batteryLevel = `${battery.level * 100}%`;
@@ -27,7 +29,12 @@ async function showBattery() {
     changeLevel(battery);
     // Change Battery color
     // changeBatteryColor(battery.level * 100)
-    [...progressBar.classList].filter((e) => e.match("bg-"));
+    // [...progressBar.classList].filter((e) => e.match("bg-"));
+    // debugger;
+    progressBar.classList.remove("bg-success");
+    if (oldClassName) {
+      progressBar.classList.remove(oldClassName); // removing the prev classname
+    }
     progressBar.classList.add(changeBatteryColor(battery.level * 100));
     // Change Discharging Time
     // showDischargingTime(dischTime);

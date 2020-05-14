@@ -1,11 +1,13 @@
 // FUNCTIONS Start
 // Change Battery color function
+let oldClassName;
 function changeBatteryColor(value) {
-  let className, oldClassName;
+  let className;
   if (value >= 75 && value <= 100) className = "bg-success";
   else if (value >= 50 && value <= 75) className = "bg-info";
   else if (value >= 25 && value <= 50) className = "bg-warning";
   else if (value >= 0 && value <= 25) className = "bg-danger";
+  oldClassName = className;
   return className;
 }
 
