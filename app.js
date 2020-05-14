@@ -20,12 +20,14 @@ async function showBattery() {
     // battery.addEventListener("dischargingtimechange", () =>
     //   showDischargingTime(dischTime)
     // );
-    progressBar.setAttribute("aria-valuenow", battery.level);
+    // progressBar.setAttribute("aria-valuenow", battery.level * 100);
     progressBar.style.width = batteryLevel;
     progressBar.innerText = batteryLevel;
     // Change Level
     changeLevel(battery);
     // Change Battery color
+    // changeBatteryColor(battery.level * 100)
+    [...progressBar.classList].filter((e) => e.match("bg-"));
     progressBar.classList.add(changeBatteryColor(battery.level * 100));
     // Change Discharging Time
     // showDischargingTime(dischTime);
@@ -37,6 +39,7 @@ async function showBattery() {
     // Change the emoji
     changeEmoji(battery.level * 100);
   } catch (err) {
+    console.log(err);
     const errMessage = document.querySelector(".unsupported");
     errMessage.style.display = "block";
     document.querySelector(".supported").style.display = "none";

@@ -1,7 +1,7 @@
 // FUNCTIONS Start
 // Change Battery color function
 function changeBatteryColor(value) {
-  let className;
+  let className, oldClassName;
   if (value >= 75 && value <= 100) className = "bg-success";
   else if (value >= 50 && value <= 75) className = "bg-info";
   else if (value >= 25 && value <= 50) className = "bg-warning";
@@ -16,7 +16,7 @@ function changeBatteryColor(value) {
 
 // Change Level function
 function changeLevel(battery) {
-  batteryLevel = `${battery.level * 100}%`;
+  batteryLevel = `${battery.level.toFixed(2) * 100}%`;
   // Change Battery color
   progressBar.classList.add(changeBatteryColor(battery.level * 100));
   // console.log(battery.level * 100);
