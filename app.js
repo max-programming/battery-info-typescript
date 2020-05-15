@@ -18,33 +18,7 @@ async function showBattery() {
     battery.addEventListener("levelchange", () => changeLevel(battery));
     // Animate when charging
     battery.addEventListener("chargingchange", () => changeChargingAnimation());
-    // Change Discharging Time
-    // battery.addEventListener("dischargingtimechange", () =>
-    //   showDischargingTime(dischTime)
-    // );
-    // progressBar.setAttribute("aria-valuenow", battery.level * 100);
-    progressBar.style.width = batteryLevel;
-    progressBar.innerText = batteryLevel;
-    // Change Level
     changeLevel(battery);
-    // Change Battery color
-    // changeBatteryColor(battery.level * 100)
-    // [...progressBar.classList].filter((e) => e.match("bg-"));
-    // debugger;
-    progressBar.classList.remove("bg-success");
-    if (oldClassName) {
-      progressBar.classList.remove(oldClassName); // removing the prev classname
-    }
-    progressBar.classList.add(changeBatteryColor(battery.level * 100));
-    // Change Discharging Time
-    // showDischargingTime(dischTime);
-    // console.log(isCharging);
-    // Display text "Charging..."
-    chargingTextDisplay(isCharging);
-    // Charging Animation
-    changeChargingAnimation();
-    // Change the emoji
-    changeEmoji(battery.level * 100);
   } catch (err) {
     console.log(err);
     const errMessage = document.querySelector(".unsupported");
