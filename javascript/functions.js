@@ -35,9 +35,13 @@ function changeLevel(battery) {
   changeEmoji(battery.level * 100);
 }
 // Animate when charging function
-const changeChargingAnimation = () => {
-  console.log("Hi");
-  progressBar.classList.toggle("progress-bar-animated", isCharging); // Display text "Charging..."
+const changeChargingAnimation = (isCharging) => {
+  if (isCharging) {
+    console.log("Hi");
+    progressBar.classList.add("progress-bar-animated"); // Display text "Charging..."
+  } else {
+    progressBar.classList.remove("progress-bar-animated"); // Display text "Charging..."
+  }
   chargingTextDisplay(isCharging);
 };
 

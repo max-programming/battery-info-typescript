@@ -18,7 +18,7 @@ async function showBattery() {
     // battery.addEventListener("levelchange", () => changeLevel(battery));
     console.log(battery);
     changeLevel(battery);
-    if (battery.charging) changeChargingAnimation();
+    changeChargingAnimation(battery.charging);
   } catch (err) {
     console.log(err);
   }
