@@ -8,24 +8,29 @@ let batteryLevel, isCharging, dischTime;
 // MAIN Function Start
 async function showBattery() {
   try {
-    const colors = ["success", "info", "warning", "danger"];
+    // debugger;
     const battery = await navigator.getBattery();
     // console.log(battery);
     batteryLevel = `${battery.level * 100}%`;
     isCharging = battery.charging;
     dischTime = battery.dischargingTime;
     // Change Level
-    battery.addEventListener("levelchange", () => changeLevel(battery));
-    // Animate when charging
-    battery.addEventListener("chargingchange", () => changeChargingAnimation());
+    // battery.addEventListener("levelchange", () => changeLevel(battery));
+    console.log(battery);
     changeLevel(battery);
+    if (battery.charging) changeChargingAnimation();
   } catch (err) {
     console.log(err);
-    const errMessage = document.querySelector(".unsupported");
-    errMessage.style.display = "block";
-    document.querySelector(".supported").style.display = "none";
   }
 }
 // MAIN Funtion End
-showBattery();
-setInterval(showBattery, 1000);
+if ("getBattery" in navigator) {
+  console.log("yessss");
+  showBattery();
+  setInterval(showBattery, 1000);
+} else {
+  console.log("Your browser does not support this app.");
+  const errMessage = document.querySelector(".unsupported");
+  errMessage.style.display = "block";
+  document.querySelector(".supported").style.display = "none";
+}

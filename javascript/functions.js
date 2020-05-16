@@ -18,7 +18,8 @@ function changeBatteryColor(value) {
 
 // Change Level function
 function changeLevel(battery) {
-  batteryLevel = `${battery.level.toFixed(2) * 100}%`;
+  // console.log("level change");
+  batteryLevel = `${battery.level * 100}%`;
   // Change Battery color
   if (oldClassName) {
     progressBar.classList.remove(oldClassName); // removing the prev classname
@@ -35,6 +36,7 @@ function changeLevel(battery) {
 }
 // Animate when charging function
 const changeChargingAnimation = () => {
+  console.log("Hi");
   progressBar.classList.toggle("progress-bar-animated", isCharging); // Display text "Charging..."
   chargingTextDisplay(isCharging);
 };
