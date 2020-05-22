@@ -47,3 +47,11 @@ main {
     font-size: 30px;
   }
 }
+
+ul {
+  list-style: none;
+}
+
+.links a {
+  font-size: 1.3rem;
+}
