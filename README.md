@@ -4,9 +4,9 @@ I built a simple battery info app in vanilla JavaScript using the battery web ap
 
 It will show you the current battery status of your device with some cool and tasty emojis 😏. And charging if it is charging.
 
-<img height="20" width="20" src="https://unpkg.com/simple-icons@v3/icons/codepen.svg" /> [Codepen](https://codepen.io/Max_Programming/full/jObeGMj)
+[Codepen](https://codepen.io/Max_Programming/full/jObeGMj)
 
-<img height="20" width="20" src="https://unpkg.com/simple-icons@v3/icons/youtube.svg" /> [YouTube tutorial](https://youtu.be/J8_hwKSeffY)
+[YouTube tutorial](https://youtu.be/J8_hwKSeffY)
 
 Browsers that don't support this app: 🚫
 
