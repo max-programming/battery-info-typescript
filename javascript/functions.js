@@ -13,7 +13,7 @@ function changeBatteryColor(value) {
 
 // Change Level function
 function changeLevel(battery) {
-  batteryLevel = `${battery.level * 100}%`;
+  batteryLevel = `${(battery.level * 100).toFixed(1)}%`;
   // Change Battery color
   if (oldClassName) {
     progressBar.classList.remove(oldClassName); // removing the prev classname
