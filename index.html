@@ -10,7 +10,6 @@
     />
     <meta name="author" content="Max Programming" />
     <title>Battery Info</title>
-    <link rel="stylesheet" href="./assets/bootstrap.min.css" />
     <link rel="stylesheet" href="./styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
@@ -53,27 +52,18 @@
           <h4 class="text-center mb-3">
             Dark theme is good for your battery health
           </h4>
-          <div class="progress" style="height: 50px;">
-            <div
-              class="progress-bar progress-bar-striped"
-              id="progressBar"
-              role="progressbar"
-              style="width: 0%; font-size: 1.4rem;"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              data-toggle="tooltip"
-              data-placement="left"
-              data-container="body"
-            ></div>
+          <div class="progress-bar-striped">
+            <div style="width: 30%" id="progressBar">
+              <p id="progress"></p>
+            </div>
           </div>
-          <h4 class="text-center mt-3 d-none" id="chargingText">
-            Charging...
-          </h4>
+
+          <h4 class="text-center mt-3 d-none" id="chargingText">Charging...</h4>
           <h5 class="text-center mt-3" id="doneIn"></h5>
           <img
             class="mt-3 mx-auto d-block"
             id="emoji"
-            style="transition: all 0.3s ease;"
+            style="transition: all 0.3s ease"
             src="./img/emojis/blue.png"
             alt=""
           />
@@ -112,7 +102,7 @@
         </h4> -->
         <h4
           class="text-center mb-3 position-absolute"
-          style="font-size: 12px; bottom: 0;"
+          style="font-size: 12px; bottom: 0"
         >
           Unfortunately, this won't work on Brave browser,
           <i class="fab fa-firefox-browser"></i> Firefox browser and

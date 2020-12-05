@@ -1,20 +1,16 @@
 // VARIABLES START
 const progressBar = document.getElementById("progressBar");
-// const timeSpan = document.getElementById("time");
+const progress = document.getElementById("progress");
 let batteryLevel, isCharging;
-// const className = changeBatteryColor(battery.level * 100);
 // VARIABLES END
 
 // MAIN Function Start
 async function showBattery() {
   try {
-    // debugger;
     const battery = await navigator.getBattery();
-    // console.log(battery);
     batteryLevel = `${battery.level * 100}%`;
     isCharging = battery.charging;
     // Change Level
-    // battery.addEventListener("levelchange", () => changeLevel(battery));
     console.log(battery);
     changeLevel(battery);
     changeChargingAnimation(battery.charging);

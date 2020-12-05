@@ -11,29 +11,21 @@ function changeBatteryColor(value) {
   return className;
 }
 
-// function showDischargingTime(dischargingTime) {
-//   let newTime = Math.floor(dischargingTime / 3600);
-//   timeSpan.innerText = `${newTime} hours`;
-// }
-
 // Change Level function
 function changeLevel(battery) {
-  // console.log("level change");
   batteryLevel = `${battery.level * 100}%`;
   // Change Battery color
   if (oldClassName) {
     progressBar.classList.remove(oldClassName); // removing the prev classname
   }
   progressBar.classList.add(changeBatteryColor(battery.level * 100));
-  // console.log(battery.level * 100);
-  // console.log(batteryLevel);
-  progressBar.setAttribute("aria-valuenow", battery.level);
   progressBar.style.width = batteryLevel;
-  progressBar.innerText = batteryLevel;
+  progress.innerText = batteryLevel;
 
   // Change the emoji
   changeEmoji(battery.level * 100);
 }
+
 // Animate when charging function
 const changeChargingAnimation = (isCharging) => {
   if (isCharging) {
@@ -45,7 +37,8 @@ const changeChargingAnimation = (isCharging) => {
 };
 
 const chargingTextDisplay = (isCharging) => {
-  if (isCharging) document.getElementById("chargingText").classList.remove("d-none");
+  if (isCharging)
+    document.getElementById("chargingText").classList.remove("d-none");
   else document.getElementById("chargingText").classList.add("d-none");
 };
 
@@ -53,14 +46,17 @@ const changeEmoji = (value) => {
   const emojiImage = document.getElementById("emoji");
   if (value >= 75 && value <= 100) emojiImage.src = "./img/emojis/green.png";
   else if (value >= 50 && value <= 75) emojiImage.src = "./img/emojis/blue.png";
-  else if (value >= 25 && value <= 50) emojiImage.src = "./img/emojis/yellow.png";
+  else if (value >= 25 && value <= 50)
+    emojiImage.src = "./img/emojis/yellow.png";
   else if (value >= 0 && value <= 25) emojiImage.src = "./img/emojis/red.png";
 };
 
 const changeDoneIn = (ch, disch) => {
   const doneIn = document.getElementById("doneIn");
   if (ch !== Infinity) {
-    doneIn.innerText = `Your battery will be fully charged in ${(ch / 60) | 0} mins`;
+    doneIn.innerText = `Your battery will be fully charged in ${
+      (ch / 60) | 0
+    } mins`;
   } else if (disch !== Infinity) {
     doneIn.innerText = `Your battery will be dead in ${(disch / 60) | 0} mins`;
   } else {
