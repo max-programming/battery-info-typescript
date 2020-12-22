@@ -1,4 +1,4 @@
-export interface GetBattery {
+export interface BatteryType {
   charging: boolean;
   chargingTime: number;
   dischargingTime: number;

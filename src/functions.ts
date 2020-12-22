@@ -1,4 +1,4 @@
-import { GetBattery } from "./types";
+import { BatteryType } from "./types";
 
 const progressBar = document.getElementById("progressBar") as HTMLDivElement;
 let oldClassName: string;
