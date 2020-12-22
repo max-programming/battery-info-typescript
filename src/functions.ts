@@ -4,7 +4,7 @@ const progressBar = document.getElementById("progressBar") as HTMLDivElement;
 let oldClassName: string;
 
 const changeBatteryColor = (value: number) => {
-  let className: string = "none";
+  let className = "";
   if (value >= 75 && value <= 100) className = "bg-success";
   else if (value >= 50 && value <= 75) className = "bg-info";
   else if (value >= 25 && value <= 50) className = "bg-warning";
@@ -22,7 +22,7 @@ const changeEmoji = (value: number) => {
   else if (value >= 0 && value <= 25) emojiImage.src = "./img/emojis/red.png";
 };
 
-const chargingTextDisplay = (isCharging: boolean) => {
+const displayChargingText = (isCharging: boolean) => {
   const chargingText = document.getElementById(
     "chargingText"
   ) as HTMLHeadingElement;
@@ -30,10 +30,17 @@ const chargingTextDisplay = (isCharging: boolean) => {
   else chargingText.classList.add("d-none");
 };
 
+const formatBatteryLevel = (batteryLevel: number): string => {
+  const strBatteryLevel = String(batteryLevel * 100);
+  if (strBatteryLevel[strBatteryLevel.length - 1] === "0")
+    return strBatteryLevel + "%";
+  else return String((batteryLevel * 100).toFixed(1)) + "%";
+};
+
 // Change Level function
-export function changeLevel(battery: GetBattery): string {
+export function changeLevel(battery: BatteryType): string {
   const progress = document.getElementById("progress") as HTMLParagraphElement;
-  const batteryLevel = `${(battery.level * 100).toFixed(1)}%`;
+  const batteryLevel = formatBatteryLevel(battery.level);
 
   // Change Battery color
   if (oldClassName) progressBar.classList.remove(oldClassName); // removing the prev classname
@@ -53,7 +60,7 @@ export const changeChargingAnimation = (isCharging: boolean) => {
   } else {
     progressBar.classList.remove("progress-bar-animated"); // Display text "Charging..."
   }
-  chargingTextDisplay(isCharging);
+  displayChargingText(isCharging);
 };
 
 export const changeDoneIn = (ch: number, disch: number) => {

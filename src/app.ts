@@ -1,4 +1,4 @@
-import { GetBattery } from "./types";
+import { BatteryType } from "./types";
 import {
   changeLevel,
   changeChargingAnimation,
@@ -11,7 +11,7 @@ let batteryLevel: string, isCharging: boolean;
 // MAIN Function Start
 async function showBattery() {
   try {
-    const battery: GetBattery = await navigatorObj.getBattery();
+    const battery: BatteryType = await navigatorObj.getBattery();
     isCharging = battery.charging;
     // Change Level
     batteryLevel = changeLevel(battery);
