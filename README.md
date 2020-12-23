@@ -1,6 +1,6 @@
 # battery-info-javascript
 
-I built a simple battery info app in vanilla JavaScript using the battery web api in the navigator and Bootstrap.
+I built a simple battery info app in vanilla JavaScript using the `getBattery` web API in the `navigator` and Typescript.
 
 It will show you the current battery status of your device with some cool and tasty emojis 😏. And charging if it is charging.
 
