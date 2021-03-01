@@ -66,11 +66,13 @@ export const changeChargingAnimation = (isCharging: boolean) => {
 export const changeDoneIn = (ch: number, disch: number) => {
   const doneIn = document.getElementById("doneIn") as HTMLHeadingElement;
   if (ch !== Infinity) {
-    doneIn.innerText = `Your battery will be fully charged in ${ch > 3599 ? `${ch / 3600 | 0} hours ` : ''}${
-      ((ch / 60) % 60 | 0) 
-    } mins`;
+    doneIn.innerText = `Your battery will be fully charged in ${
+      ch > 3599 ? `${(ch / 3600) | 0} hours ` : ""
+    }${(ch / 60) % 60 | 0} mins`;
   } else if (disch !== Infinity) {
-    doneIn.innerText = `Your battery will be dead in ${disch > 3599 ? `${disch / 3600 | 0} hours ` : ''}${(disch / 60) % 60 | 0} mins`;
+    doneIn.innerText = `Your battery will be dead in ${
+      disch > 3599 ? `${(disch / 3600) | 0} hours ` : ""
+    }${(disch / 60) % 60 | 0} mins`;
   } else {
     doneIn.innerText = "";
   }

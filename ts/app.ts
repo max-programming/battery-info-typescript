@@ -1,3 +1,4 @@
+import "regenerator-runtime/runtime";
 import { BatteryType } from "./types";
 import {
   changeLevel,
